@@ -14,6 +14,7 @@ import JournalScreen from './screens/JournalScreen';
 import StatsScreen from './screens/StatsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import LoginScreen from './screens/LoginScreen';
+import MeditationScreen from './screens/MeditationScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -36,6 +37,7 @@ function MainTabs() {
           if (route.name === 'Journal') iconName = 'book';
           else if (route.name === 'Stats') iconName = 'stats-chart';
           else if (route.name === 'Settings') iconName = 'settings';
+          else if (route.name === 'Meditate') iconName = 'leaf';
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
@@ -43,6 +45,7 @@ function MainTabs() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Journal" component={JournalScreen} />
       <Tab.Screen name="Stats" component={StatsScreen} options={{ title: 'Stats' }} />
+      <Tab.Screen name="Meditate" component={MeditationScreen}  />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
